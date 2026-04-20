@@ -43,3 +43,5 @@ next-env.d.ts
 # large media files
 /public/audio/
 /public/videos/
+# Allow compressed background video
+!/public/videos/loading-bg-compressed.mp4
