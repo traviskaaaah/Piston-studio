@@ -10,7 +10,7 @@ export default function VideoBackground() {
         playsInline
         className="w-full h-full object-cover"
       >
-        <source src="/videos/loading-bg.mp4" type="video/mp4" />
+        <source src="https://bqa3lah1kvo0jzhq.public.blob.vercel-storage.com/videos/loading-bg.mp4" type="video/mp4" />
       </video>
       {/* Dark overlay untuk readability */}
       <div className="absolute inset-0 bg-black/60" />
