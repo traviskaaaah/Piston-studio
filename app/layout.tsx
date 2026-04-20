@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Nabla, MedievalSharp } from "next/font/google";
+import { Barrio, MedievalSharp } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
@@ -10,11 +10,11 @@ import SmoothScroll from "@/components/animations/SmoothScroll";
 import CustomCursor from "@/components/animations/CustomCursor";
 import LoadingScreen from "@/components/animations/LoadingScreen";
 
-const nabla = Nabla({
-  variable: "--font-nabla",
+const barrio = Barrio({
+  variable: "--font-barrio",
+  weight: "400",
   subsets: ["latin"],
   display: "swap",
-  adjustFontFallback: false,
 });
 
 const medievalSharp = MedievalSharp({
@@ -59,7 +59,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${nabla.variable} ${medievalSharp.variable} h-full antialiased`}
+      className={`${barrio.variable} ${medievalSharp.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col bg-black">
         <AudioProvider>
