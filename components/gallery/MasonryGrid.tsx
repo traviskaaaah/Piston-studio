@@ -15,6 +15,8 @@ interface MasonryGridProps {
 export default function MasonryGrid({ items, onItemClick }: MasonryGridProps) {
   const gridRef = useRef<HTMLDivElement>(null);
   const [hoveredId, setHoveredId] = useState<string | null>(null);
+  const [loadedVideos, setLoadedVideos] = useState<Set<string>>(new Set());
+  const videoRefs = useRef<Map<string, HTMLVideoElement>>(new Map());
 
   useEffect(() => {
     if (!gridRef.current) return;
@@ -36,8 +38,53 @@ export default function MasonryGrid({ items, onItemClick }: MasonryGridProps) {
       }
     }, gridRef);
 
-    return () => ctx.revert();
-  }, [items]);
+    // Intersection Observer for lazy loading videos
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            const videoId = entry.target.getAttribute('data-video-id');
+            if (videoId && !loadedVideos.has(videoId)) {
+              setLoadedVideos((prev) => new Set(prev).add(videoId));
+            }
+          }
+        });
+      },
+      {
+        rootMargin: '50px', // Start loading slightly before entering viewport
+        threshold: 0.1,
+      }
+    );
+
+    // Observe all video containers
+    const videoContainers = gridRef.current?.querySelectorAll('[data-video-id]');
+    videoContainers?.forEach((container) => observer.observe(container));
+
+    return () => {
+      ctx.revert();
+      observer.disconnect();
+    };
+  }, [items, loadedVideos]);
+
+  // Handle video hover play/pause
+  const handleMouseEnter = (itemId: string) => {
+    setHoveredId(itemId);
+    const video = videoRefs.current.get(itemId);
+    if (video && loadedVideos.has(itemId)) {
+      video.play().catch(() => {
+        // Ignore play errors
+      });
+    }
+  };
+
+  const handleMouseLeave = (itemId: string) => {
+    setHoveredId(null);
+    const video = videoRefs.current.get(itemId);
+    if (video) {
+      video.pause();
+      video.currentTime = 0;
+    }
+  };
 
   if (items.length === 0) {
     return (
@@ -64,8 +111,9 @@ export default function MasonryGrid({ items, onItemClick }: MasonryGridProps) {
             key={item.id}
             className={`masonry-item group relative overflow-hidden rounded-lg bg-white/5 cursor-pointer ${spanClass}`}
             onClick={() => onItemClick(item, index)}
-            onMouseEnter={() => setHoveredId(item.id)}
-            onMouseLeave={() => setHoveredId(null)}
+            onMouseEnter={() => handleMouseEnter(item.id)}
+            onMouseLeave={() => handleMouseLeave(item.id)}
+            data-video-id={item.type === 'video' ? item.id : undefined}
           >
             {/* Media Content */}
             {item.type === 'image' ? (
@@ -76,15 +124,39 @@ export default function MasonryGrid({ items, onItemClick }: MasonryGridProps) {
                 loading="lazy"
               />
             ) : (
-              <video
-                src={item.url}
-                poster={item.thumbnail}
-                className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
-                muted
-                loop
-                playsInline
-                autoPlay={isHovered}
-              />
+              <>
+                {/* Placeholder while video not loaded */}
+                {!loadedVideos.has(item.id) && (
+                  <div className="w-full h-full bg-gradient-to-br from-white/5 to-white/10 flex items-center justify-center">
+                    <div className="w-16 h-16 rounded-full bg-white/10 backdrop-blur-sm flex items-center justify-center">
+                      <svg
+                        width="24"
+                        height="24"
+                        viewBox="0 0 24 24"
+                        fill="white"
+                        className="ml-1"
+                      >
+                        <polygon points="5 3 19 12 5 21 5 3" />
+                      </svg>
+                    </div>
+                  </div>
+                )}
+                {/* Video element - only render when in viewport */}
+                {loadedVideos.has(item.id) && (
+                  <video
+                    ref={(el) => {
+                      if (el) videoRefs.current.set(item.id, el);
+                    }}
+                    src={item.url}
+                    poster={item.thumbnail}
+                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                    muted
+                    loop
+                    playsInline
+                    preload="none"
+                  />
+                )}
+              </>
             )}
 
             {/* Overlay */}
