@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Barrio, MedievalSharp } from "next/font/google";
+import { Courier_Prime, MedievalSharp } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
@@ -10,8 +10,8 @@ import SmoothScroll from "@/components/animations/SmoothScroll";
 import CustomCursor from "@/components/animations/CustomCursor";
 import LoadingScreen from "@/components/animations/LoadingScreen";
 
-const barrio = Barrio({
-  variable: "--font-barrio",
+const courierPrime = Courier_Prime({
+  variable: "--font-courier-prime",
   weight: "400",
   subsets: ["latin"],
   display: "swap",
@@ -59,7 +59,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${barrio.variable} ${medievalSharp.variable} h-full antialiased`}
+      className={`${courierPrime.variable} ${medievalSharp.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col bg-black">
         <AudioProvider>

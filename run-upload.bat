@@ -1,0 +1,4 @@
+@echo off
+set BLOB_READ_WRITE_TOKEN=vercel_blob_rw_bQa3laH1kvO0JZhq_O8wbCUcmRPzibG26cHz0ZCfinFosDi
+node upload-to-blob.js
+pause

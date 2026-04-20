@@ -1,0 +1,31 @@
+{
+  "audio": {
+    "Piston Studio - Bukit Besak.wav": "https://bqa3lah1kvo0jzhq.public.blob.vercel-storage.com/audio/Piston%20Studio%20-%20Bukit%20Besak.wav",
+    "Piston Studio - Decimal.mp3": "https://bqa3lah1kvo0jzhq.public.blob.vercel-storage.com/audio/Piston%20Studio%20-%20Decimal.mp3",
+    "Piston Studio - False Virtue.wav": "https://bqa3lah1kvo0jzhq.public.blob.vercel-storage.com/audio/Piston%20Studio%20-%20False%20Virtue.wav",
+    "Piston Studio - Problematic B.wav": "https://bqa3lah1kvo0jzhq.public.blob.vercel-storage.com/audio/Piston%20Studio%20-%20Problematic%20B.wav",
+    "Piston Studio - Transmute.mp3": "https://bqa3lah1kvo0jzhq.public.blob.vercel-storage.com/audio/Piston%20Studio%20-%20Transmute.mp3"
+  },
+  "videos": {
+    "(wave1,w,wave2).mp4": "https://bqa3lah1kvo0jzhq.public.blob.vercel-storage.com/videos/%28wave1%2Cw%2Cwave2%29.mp4",
+    "ascii slide.mp4": "https://bqa3lah1kvo0jzhq.public.blob.vercel-storage.com/videos/ascii%20slide.mp4",
+    "Beyond The Voyage.mov": "https://bqa3lah1kvo0jzhq.public.blob.vercel-storage.com/videos/Beyond%20The%20Voyage.mov",
+    "fraktall.mp4": "https://bqa3lah1kvo0jzhq.public.blob.vercel-storage.com/videos/fraktall.mp4",
+    "Into The Void.mp4": "https://bqa3lah1kvo0jzhq.public.blob.vercel-storage.com/videos/Into%20The%20Void.mp4",
+    "Jabo 2.mp4": "https://bqa3lah1kvo0jzhq.public.blob.vercel-storage.com/videos/Jabo%202.mp4",
+    "jabo.mp4": "https://bqa3lah1kvo0jzhq.public.blob.vercel-storage.com/videos/jabo.mp4",
+    "loading-bg.mp4": "https://bqa3lah1kvo0jzhq.public.blob.vercel-storage.com/videos/loading-bg.mp4",
+    "particles.mp4": "https://bqa3lah1kvo0jzhq.public.blob.vercel-storage.com/videos/particles.mp4",
+    "PISTON BOM.mp4": "https://bqa3lah1kvo0jzhq.public.blob.vercel-storage.com/videos/PISTON%20BOM.mp4",
+    "react active slide.mp4": "https://bqa3lah1kvo0jzhq.public.blob.vercel-storage.com/videos/react%20active%20slide.mp4",
+    "sketch_210906a 2022-05-13 17-10-09.mov": "https://bqa3lah1kvo0jzhq.public.blob.vercel-storage.com/videos/sketch_210906a%202022-05-13%2017-10-09.mov",
+    "Tiger Dance.mp4": "https://bqa3lah1kvo0jzhq.public.blob.vercel-storage.com/videos/Tiger%20Dance.mp4",
+    "tribute.mov": "https://bqa3lah1kvo0jzhq.public.blob.vercel-storage.com/videos/tribute.mov",
+    "Visual Piston  3.mp4": "https://bqa3lah1kvo0jzhq.public.blob.vercel-storage.com/videos/Visual%20Piston%20%203.mp4",
+    "Visual Piston 1.mp4": "https://bqa3lah1kvo0jzhq.public.blob.vercel-storage.com/videos/Visual%20Piston%201.mp4",
+    "Visual Piston 2.mp4": "https://bqa3lah1kvo0jzhq.public.blob.vercel-storage.com/videos/Visual%20Piston%202.mp4",
+    "Visual Piston 4.mp4": "https://bqa3lah1kvo0jzhq.public.blob.vercel-storage.com/videos/Visual%20Piston%204.mp4",
+    "Visual Piston 5.mp4": "https://bqa3lah1kvo0jzhq.public.blob.vercel-storage.com/videos/Visual%20Piston%205.mp4",
+    "Visual Piston 6.mp4": "https://bqa3lah1kvo0jzhq.public.blob.vercel-storage.com/videos/Visual%20Piston%206.mp4"
+  }
+}
