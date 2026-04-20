@@ -12,9 +12,9 @@ import LoadingScreen from "@/components/animations/LoadingScreen";
 
 const nabla = Nabla({
   variable: "--font-nabla",
-  weight: "400",
   subsets: ["latin"],
   display: "swap",
+  adjustFontFallback: false,
 });
 
 const medievalSharp = MedievalSharp({
