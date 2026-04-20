@@ -15,10 +15,10 @@ const config: Config = {
         secondary: '#00d9ff',
       },
       fontFamily: {
-        sans: ['var(--font-courier-prime)', 'monospace'],
-        courier: ['var(--font-courier-prime)', 'monospace'],
+        sans: ['var(--font-space-grotesk)', 'sans-serif'],
+        grotesk: ['var(--font-space-grotesk)', 'sans-serif'],
         medieval: ['var(--font-medieval-sharp)', 'serif'],
-        display: ['var(--font-courier-prime)', 'monospace'],
+        display: ['var(--font-space-grotesk)', 'sans-serif'],
       },
       animation: {
         "fade-in": "fadeIn 0.6s ease-out",

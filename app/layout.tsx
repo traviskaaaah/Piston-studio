@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Courier_Prime, MedievalSharp } from "next/font/google";
+import { Space_Grotesk, MedievalSharp } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
@@ -10,9 +10,9 @@ import SmoothScroll from "@/components/animations/SmoothScroll";
 import CustomCursor from "@/components/animations/CustomCursor";
 import LoadingScreen from "@/components/animations/LoadingScreen";
 
-const courierPrime = Courier_Prime({
-  variable: "--font-courier-prime",
-  weight: "400",
+const spaceGrotesk = Space_Grotesk({
+  variable: "--font-space-grotesk",
+  weight: ["400", "700"],
   subsets: ["latin"],
   display: "swap",
 });
@@ -59,7 +59,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${courierPrime.variable} ${medievalSharp.variable} h-full antialiased`}
+      className={`${spaceGrotesk.variable} ${medievalSharp.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col bg-black">
         <AudioProvider>
