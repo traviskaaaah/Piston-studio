@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { MedievalSharp } from "next/font/google";
+import { Nabla, MedievalSharp } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
@@ -9,6 +9,13 @@ import { AudioProvider } from "@/lib/audio/AudioContext";
 import SmoothScroll from "@/components/animations/SmoothScroll";
 import CustomCursor from "@/components/animations/CustomCursor";
 import LoadingScreen from "@/components/animations/LoadingScreen";
+
+const nabla = Nabla({
+  variable: "--font-nabla",
+  weight: "400",
+  subsets: ["latin"],
+  display: "swap",
+});
 
 const medievalSharp = MedievalSharp({
   variable: "--font-medieval-sharp",
@@ -52,7 +59,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${medievalSharp.variable} h-full antialiased`}
+      className={`${nabla.variable} ${medievalSharp.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col bg-black">
         <AudioProvider>

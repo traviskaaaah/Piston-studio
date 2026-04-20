@@ -15,9 +15,10 @@ const config: Config = {
         secondary: '#00d9ff',
       },
       fontFamily: {
-        sans: ['var(--font-medieval-sharp)', 'system-ui', 'serif'],
+        sans: ['var(--font-nabla)', 'system-ui', 'sans-serif'],
+        nabla: ['var(--font-nabla)', 'sans-serif'],
         medieval: ['var(--font-medieval-sharp)', 'serif'],
-        display: ['var(--font-medieval-sharp)', 'serif'],
+        display: ['var(--font-nabla)', 'sans-serif'],
       },
       animation: {
         "fade-in": "fadeIn 0.6s ease-out",

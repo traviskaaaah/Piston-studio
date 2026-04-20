@@ -50,7 +50,7 @@ export default function Footer() {
 
           {/* Copyright */}
           <div className="text-center md:text-right">
-            <p className="text-xs text-white/40">
+            <p className="font-medieval text-xs text-white/40">
               © {new Date().getFullYear()} Piston Studio. All rights reserved.
             </p>
           </div>
